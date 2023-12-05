@@ -187,7 +187,7 @@ class BigCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    var style = theme.textTheme.displayLarge!
+    var style = theme.textTheme.displayMedium!
         .copyWith(color: theme.colorScheme.onPrimary);
 
     return Card(
