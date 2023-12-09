@@ -1,46 +1,45 @@
-# Namer App
+# Flutter Tutorials Repository 🚀
 
-The Namer App is a Flutter application that generates random word pairs and allows users to mark their favorite pairs. The app utilizes Flutter's `provider` package for state management, providing a seamless and interactive user experience.
+Welcome to my Flutter Tutorials Repository! Here, you'll find a collection of tutorials that I followed while learning Flutter. These tutorials have been instrumental in honing my skills and building awesome Flutter applications. 🎉
 
-## Features
+## Tutorials
 
-- **Random Word Pair Generation**: The app generates random word pairs for users to explore. 🎲
-- **Favorite Word Pairs**: Users can mark word pairs as favorites, and the app keeps track of their favorites list. ❤️
-- **History Tracking**: The app maintains a history of generated word pairs, offering a glimpse into the user's exploration. 📜
+### 1. Namer App - [Codelabs Tutorial](https://codelabs.developers.google.com/codelabs/flutter-codelab-first#8)
 
-## Setup
+The Namer App tutorial from Google Codelabs is a fantastic introduction to Flutter. Follow this tutorial to create your own "Namer" app and dive into the world of Flutter widgets and UI design. 📱
 
-To run the Namer App on your local machine, follow these steps:
+### 2. To-Do List - [YouTube Tutorial](https://www.youtube.com/watch?v=HQ_ytw58tC4&t=6766s)
 
-1. Ensure you have Flutter installed. If not, you can follow the [official installation guide](https://flutter.dev/docs/get-started/install). 🚀
-2. Clone this repository to your local machine.
-   ```bash
-   git clone https://github.com/your-username/namer_app.git
-   ```
-3. Navigate to the project directory.
-   ```bash
-   cd namer_app
-   ```
-4. Run the app.
-   ```bash
-   flutter run
-   ```
+This comprehensive YouTube tutorial by [YouTuber's Name] takes you through the process of building a To-Do List app in Flutter. Learn about state management, navigation, and more as you follow along with the engaging tutorial. ✔️
 
-## Screenshots
+## Getting Started
 
-*Include screenshots or GIFs of the app in action.* 📸
+To get started with Flutter, follow these steps:
 
-## Dependencies
+### Installing Flutter
 
-The Namer App relies on the following key dependencies:
+1. Visit the [Flutter website](https://flutter.dev/docs/get-started/install) for detailed instructions on installing Flutter on your machine.
 
-- `english_words`: A package providing a collection of English words for word pair generation. 📚
-- `provider`: A state management package for Flutter applications. 🔄
+2. Ensure that you have Flutter and Dart SDKs installed on your system.
 
-## Contributing
+### Running the Scripts
 
-Contributions are welcome! If you find a bug, have a feature request, or would like to contribute in any way, please open an issue or submit a pull request. 🤝
+1. Clone this repository to your local machine:
 
-## License
+```bash
+git clone https://github.com/your-username/flutter-tutorials.git
+```
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code for your projects. 📄
+2. Navigate to the project folder:
+
+```bash
+cd flutter-tutorials
+```
+
+3. Open a terminal and run the Flutter script for the desired tutorial:
+
+```bash
+flutter run
+```
+
+Now, sit back, relax, and enjoy exploring the fascinating world of Flutter! If you encounter any issues or have questions, feel free to open an issue or reach out. Happy coding! 🚀🔧
