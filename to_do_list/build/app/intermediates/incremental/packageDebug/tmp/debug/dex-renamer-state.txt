@@ -1,0 +1,4 @@
+#Fri Dec 08 17:52:35 GMT 2023
+base.0=E\:\\GitHub\\Ebook_App\\to_do_list\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
