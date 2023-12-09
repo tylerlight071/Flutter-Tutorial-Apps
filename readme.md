@@ -10,7 +10,7 @@ The Namer App tutorial from Google Codelabs is a fantastic introduction to Flutt
 
 ### 2. To-Do List - [YouTube Tutorial](https://www.youtube.com/watch?v=HQ_ytw58tC4&t=6766s)
 
-This comprehensive YouTube tutorial by [YouTuber's Name] takes you through the process of building a To-Do List app in Flutter. Learn about state management, navigation, and more as you follow along with the engaging tutorial. ✔️
+This comprehensive YouTube tutorial by Mitch Koko takes you through the fundamentals of Flutter and Dart including the process of building a To-Do List app in Flutter. Learn about state management, navigation, and more as you follow along with the engaging tutorial. ✔️
 
 ## Getting Started
 
