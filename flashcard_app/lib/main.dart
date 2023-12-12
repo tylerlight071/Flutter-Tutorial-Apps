@@ -1,9 +1,9 @@
 import 'package:flashcard_app/models/flashcard.dart';
-import 'package:flashcard_app/pages/flashcard_list.dart'; // Ensure the correct import path
+import 'package:flashcard_app/pages/flashcard_list.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,16 +17,16 @@ class MyApp extends StatelessWidget {
     // Add more flashcards as needed
   ];
 
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flashcard Quiz',
       home: FlashcardList(flashcards: flashcards),
-      theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
     );
   }
 }
+
+// ToDo Add Database
