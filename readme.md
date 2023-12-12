@@ -12,6 +12,13 @@ The Namer App tutorial from Google Codelabs is a fantastic introduction to Flutt
 
 This comprehensive YouTube tutorial by Mitch Koko takes you through the fundamentals of Flutter and Dart including the process of building a To-Do List app in Flutter. Learn about state management, navigation, and more as you follow along with the engaging tutorial. ✔️
 
+### 3. Demo Rebuild - [Hands-On Exploration]
+Unlike the guided tutorials, my third project involved a self-driven exploration. Without relying on a step-by-step tutorial, I initiated an 'Empty Application' and reconstructed the demo application generated when starting a new 'Application' in Flutter.
+
+This independent endeavor served as a valuable learning experience, providing hands-on exposure to problem-solving and reinforcing acquired knowledge. While overcoming challenges and errors, I honed my skills and gained a more profound understanding of Flutter's intricacies.
+
+Notably, I introduced personal touches to the project, such as implementing a new button for counter clearance and incorporating basic animations to enhance the visual appeal. This approach encourages a deeper engagement with Flutter's features and cultivates a problem-solving mindset essential for real-world applications. 🛠️
+
 ## Getting Started
 
 To get started with Flutter, follow these steps:
@@ -41,5 +48,20 @@ cd flutter-tutorials
 ```bash
 flutter run
 ```
+
+## Extensions
+
+As an avid user of Visual Studio Code for Flutter development, I've curated a list of indispensable extensions that enhance my coding experience:
+
+1. **Dart**: This extension is a fundamental requirement for working with the Dart programming language.
+2. **Flutter**: An essential extension for Flutter development, providing necessary tools and support for the framework.
+3. **Flutter Coverage**: Seamlessly integrated into the test view container, this extension offers a detailed tree view showcasing coverage per file/folder.
+4. **Flutter Intl**: Simplifying translation management, this extension establishes a connection between .arb files and your Flutter app. It generates Dart Intl library code and facilitates key auto-completion in Dart code.
+5. **Flutter Tree**: Elevating widget tree visualization, this extension empowers you to construct a basic widget tree with a user-friendly syntax.
+6. **Material Icon Theme**: Enhance your IDE explorer with easy-to-read icons for folders and files, streamlining navigation.
+7. **Min Theme**: Opting for the dark theme, this extension provides a visually comfortable environment for extended coding sessions.
+8. **Awesome Flutter Snippets**: Boost your coding efficiency with this collection of frequently used classes and methods, eliminating the need for repetitive boilerplate code.
+9. **Better Comments**: Facilitating improved comment readability, this extension allows for color-coded comments, aiding in better comprehension.
+10. **Bracket Pair Color**: Streamline code readability with this remarkable extension that assigns distinct colors to different bracket pairs, ensuring clear identification of code blocks.
 
 Now, sit back, relax, and enjoy exploring the fascinating world of Flutter! If you encounter any issues or have questions, feel free to open an issue or reach out. Happy coding! 🚀🔧
