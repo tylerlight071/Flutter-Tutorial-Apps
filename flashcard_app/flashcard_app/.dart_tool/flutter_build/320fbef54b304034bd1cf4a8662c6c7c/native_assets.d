@@ -1,1 +1,0 @@
- E:\\GitHub\\Flutter-App\\flashcard_app\\flashcard_app\\.dart_tool\\flutter_build\\320fbef54b304034bd1cf4a8662c6c7c\\native_assets.yaml: 
