@@ -1,0 +1,4 @@
+#Tue Dec 12 18:27:31 GMT 2023
+base.0=E\:\\GitHub\\Flutter-App\\flashcard_app\\flashcard_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
