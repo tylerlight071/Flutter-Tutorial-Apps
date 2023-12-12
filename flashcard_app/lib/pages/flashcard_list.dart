@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flashcard_app/models/flashcard.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class FlashcardList extends StatefulWidget {
   final List<Flashcard> flashcards;
@@ -28,7 +29,13 @@ class _FlashcardListState extends State<FlashcardList> {
                 itemBuilder: (context, index) {
                   return Center(
                     child: IntrinsicHeight(
-                      child: FlashcardItem(flashcard: widget.flashcards[index]),
+                      child: FlashcardItem(
+                          flashcard: widget.flashcards[index],
+                          onDelete: () {
+                            setState(() {
+                              widget.flashcards.removeAt(index);
+                            });
+                          }),
                     ),
                   );
                 },
@@ -52,6 +59,8 @@ class _FlashcardListState extends State<FlashcardList> {
       ),
     );
   }
+
+  Box<Flashcard> flashcardsBox = Hive.box<Flashcard>('flashcards');
 
   void _showAddFlashcardDialog(
       BuildContext context, Function(Flashcard) addFlashcard) {
@@ -87,9 +96,11 @@ class _FlashcardListState extends State<FlashcardList> {
                 Flashcard newFlashcard = Flashcard(
                   question: questionController.text,
                   answer: answerController.text,
+                  key: DateTime.now().millisecondsSinceEpoch,
                 );
 
-                addFlashcard(newFlashcard); // Add the new flashcard to the list
+                addFlashcard(newFlashcard);
+                flashcardsBox.add(newFlashcard);
 
                 Navigator.of(context).pop();
               },
@@ -104,8 +115,11 @@ class _FlashcardListState extends State<FlashcardList> {
 
 class FlashcardItem extends StatefulWidget {
   final Flashcard flashcard;
+  final VoidCallback onDelete;
 
-  const FlashcardItem({Key? key, required this.flashcard}) : super(key: key);
+  const FlashcardItem(
+      {Key? key, required this.flashcard, required this.onDelete})
+      : super(key: key);
 
   @override
   _FlashcardItemState createState() => _FlashcardItemState();
@@ -118,6 +132,16 @@ class _FlashcardItemState extends State<FlashcardItem> {
     setState(() {
       showAnswer = !showAnswer;
     });
+  }
+
+  void removeFlashcard() {
+    widget.onDelete();
+
+    Hive.box<Flashcard>('flashcards').delete(widget.flashcard.key);
+
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      content: Text("Flashcard Removed"),
+    ));
   }
 
   @override
@@ -148,9 +172,17 @@ class _FlashcardItemState extends State<FlashcardItem> {
                 const SizedBox(
                   height: 80.0,
                 ),
-                ElevatedButton(
-                  onPressed: toggleCard,
-                  child: Text(showAnswer ? 'Show Question' : 'Show Answer'),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ElevatedButton(
+                      onPressed: toggleCard,
+                      child: Text(showAnswer ? 'Show Question' : 'Show Answer'),
+                    ),
+                    ElevatedButton(
+                        onPressed: removeFlashcard,
+                        child: const Icon(Icons.delete))
+                  ],
                 ),
               ],
             ),
