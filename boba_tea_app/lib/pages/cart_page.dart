@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:boba_tea_app/components/drink_tile.dart';
 import 'package:boba_tea_app/models/drink.dart';
 import 'package:boba_tea_app/models/shop.dart';
@@ -60,28 +62,94 @@ class CartPageState extends State<CartPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    "Total:",
+                    "Total",
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    "£${value.cart.length * 4.99}",
+                    value.totalPrice,
                     style: const TextStyle(
-                      fontSize: 24,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
-              //! checkout button
+
+              //checkout button
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
+                  padding: const EdgeInsets.only(top: 18.0, bottom: 8),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (BuildContext context) {
+                          return const Dialog(
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                  top: 18.0,
+                                  bottom: 18.0,
+                                  left: 2.0,
+                                  right: 2.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  CircularProgressIndicator(),
+                                  Text(
+                                    "Processing Payment...",
+                                    style: TextStyle(fontSize: 18),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
+
+                      await Future.delayed(const Duration(seconds: 2));
+
+                      Navigator.pop(context);
+
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: const Text("Payment: ",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18)),
+                              content: const Row(
+                                children: [
+                                  Text(
+                                    "Payment Successful!",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 18),
+                                  ),
+                                  Icon(Icons.check, color: Colors.green)
+                                ],
+                              ),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () {
+                                    Provider.of<BubbleTeaShop>(context,
+                                            listen: false)
+                                        .clearCart();
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text("Close"),
+                                ),
+                              ],
+                            );
+                          });
+                    },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
