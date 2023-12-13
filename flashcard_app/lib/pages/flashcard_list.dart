@@ -57,6 +57,8 @@ class FlashcardItem extends StatefulWidget {
   const FlashcardItem({Key? key, required this.flashcard}) : super(key: key);
 
   @override
+  //! Fix this error
+  // ignore: library_private_types_in_public_api
   _FlashcardItemState createState() => _FlashcardItemState();
 }
 
