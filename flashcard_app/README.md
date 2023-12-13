@@ -1,2 +1,0 @@
-# flashcard_app
-
